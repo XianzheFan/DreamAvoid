@@ -1,0 +1,105 @@
+shared_defaults:
+  default_left0: &default_left0 [0.02, 0.01, 0.0, 0.0, 0.34, 0.16, 0.0]
+  default_right0: &default_right0 [0.0, 0.32, -0.36, 0.0, 0.24, 0.0, 0.1]
+  default_right_gripper_postprocess: &default_right_gripper_postprocess
+    - when: below
+      threshold: 0.05
+      add: -0.01
+    - when: above
+      threshold: 0.05
+      add: 0.01
+
+towel:
+  language_instruction: "Fold the towel."
+  left0: [0.0, 0.0, 0.02, -0.03, 0.0, 0.0, 0.1]
+  right0: [0.0, 0.0, 0.03, -0.05, 0.0, 0.0, 0.1]
+  action_postprocess:
+    left_gripper:
+      - when: below
+        threshold: 0.02
+        set: 0.0
+    right_gripper:
+      - when: below
+        threshold: 0.02
+        set: 0.0
+
+rubbish:
+  language_instruction: "Pick up the trash and throw it in the trash bin."
+  left0: *default_left0
+  right0: *default_right0
+  action_postprocess:
+    right_gripper: *default_right_gripper_postprocess
+
+tissue:
+  language_instruction: "Pick up a pack of tissue paper and put it in the plastic basket."
+  left0: *default_left0
+  right0: *default_right0
+  action_postprocess:
+    right_gripper: *default_right_gripper_postprocess
+
+beverage:
+  language_instruction: "Pick up the beverage and put it in the plastic basket."
+  left0: *default_left0
+  right0: *default_right0
+  action_postprocess:
+    right_gripper: *default_right_gripper_postprocess
+
+play_pp:
+  language_instruction: "Hit the table tennis ball to the opponent."
+  left0: [-0.1, 0.01, 0.0, 0.0, 0.2, 0.0, 0.0]
+  right0: [0.19, 1.0, -0.9, 0.0, 0.0, 0.0, 0.0]
+  action_postprocess:
+    right_gripper:
+      - set: 0.0
+
+pick_pp:
+  language_instruction: "Pick up the rolling table tennis ball."
+  left0: *default_left0
+  right0: *default_right0
+  action_postprocess:
+    right_gripper:
+      - when: below
+        threshold: 0.03
+        add: -0.01
+
+cup:
+  language_instruction: "Pick up the paper cup and put it into the cup sleeve."
+  left0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0]
+  right0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1]
+  action_postprocess:
+    right_gripper: *default_right_gripper_postprocess
+
+plug:
+  language_instruction: "Plug the charger into the socket."
+  left0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0]
+  right0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.028]
+  action_postprocess:
+    right_gripper: *default_right_gripper_postprocess
+
+spray_cap:
+  language_instruction: "Open the cap of the spray and place it on the table"
+  left0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  right0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  action_postprocess:
+    left_gripper:
+      - when: below
+        threshold: 0.01
+        set: 0.0
+    right_gripper:
+      - when: below
+        threshold: 0.01
+        set: 0.0
+
+screw:
+  language_instruction: "Insert the screw into the hole in the box."
+  left0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+  right0: [0.509574128, 2.21687074, -1.4768962600000002, -0.21211904, -0.47826214800000005, -0.24953642, 0.0072]
+  action_postprocess:
+    left_gripper:
+      - when: below
+        threshold: 0.01
+        set: 0.0
+    right_gripper:
+      - when: below
+        threshold: 0.01
+        set: 0.0

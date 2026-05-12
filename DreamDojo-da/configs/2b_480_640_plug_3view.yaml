@@ -1,0 +1,60 @@
+checkpoint:
+  save_iter: 1000
+
+trainer:
+  run_validation: true
+  validation_iter: 1000
+  max_val_iter: 50
+  grad_accum_iter: 1
+  callbacks:
+    every_n_sample_reg:
+      every_n: 1000
+      fps: 5
+    every_n_sample_ema:
+      every_n: 1000
+      fps: 5
+    validation_sample:
+      _target_: cosmos_predict2._src.predict2.callbacks.validation_draw_sample.ValidationDrawSample
+      n_samples: 1
+      guidance: [0]
+      fps: 5
+      is_ema: true
+      do_x0_prediction: false
+
+model_parallel:
+  context_parallel_size: 1
+
+model:
+  config:
+    state_t: 4
+    net:
+      action_dim: 384
+      temporal_compression_ratio: 4
+      num_action_per_chunk: 12
+      zero_init_action_embedder: false
+
+dataloader_train:
+  batch_size: 4
+
+  dataset:
+    num_frames: 13
+    dataset_path:
+      - datasets/plug_merged
+    data_split: train
+    single_base_index: false
+    deterministic_uniform_sampling: false
+    embodiment_override: new_agilex_3view
+    timestep_interval_override: 4
+
+dataloader_val:
+  batch_size: 4
+
+  dataset:
+    num_frames: 13
+    dataset_path:
+      - datasets/plug_merged
+    data_split: val
+    single_base_index: false
+    deterministic_uniform_sampling: false
+    embodiment_override: new_agilex_3view
+    timestep_interval_override: 4
