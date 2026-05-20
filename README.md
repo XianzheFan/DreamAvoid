@@ -4,6 +4,9 @@ DreamAvoid is a critical-phase test-time dreaming framework for VLA (Vision-Lang
 
 The system has three modules: a **Dream Trigger** that decides when to intervene, an **Action Proposer** that samples multiple candidate action chunks, and a **Dream Evaluator** that scores candidates by forward-simulating their short-horizon futures with an action-conditioned world model and a value model.
 
+<video src="https://drive.google.com/uc?export=download&id=1YI2vJYQpwIoHb0ship5vkSFgl7bgAfIc" controls="controls" width="100%">
+</video>
+
 <p align="center">
   <img src="teaser.png" alt="DreamAvoid teaser" width="100%"/>
 </p>
