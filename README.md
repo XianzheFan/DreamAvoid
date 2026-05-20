@@ -1,8 +1,11 @@
 # DreamAvoid
 
 <p align="center">
+  <a href="https://arxiv.org/abs/2605.11750" target="_blank">
+    <img src="https://img.shields.io/badge/arXiv-2605.11750-b31b1b.svg?style=flat" alt="arXiv" />
+  </a>
   <a href="https://drive.google.com/file/d/1YI2vJYQpwIoHb0ship5vkSFgl7bgAfIc/view" target="_blank">
-    <img src="https://img.shields.io/badge/Video_Demo-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" alt="Video Demo" />
+    <img src="https://img.shields.io/badge/Video_Demo-Google_Drive-4285F4?style=flat&logo=googledrive&logoColor=white" alt="Video Demo" />
   </a>
 </p>
 
