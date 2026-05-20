@@ -1,11 +1,14 @@
 # DreamAvoid
 
+<p align="center">
+  <a href="https://drive.google.com/file/d/1YI2vJYQpwIoHb0ship5vkSFgl7bgAfIc/view" target="_blank">
+    <img src="https://img.shields.io/badge/Video_Demo-Google_Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white" alt="Video Demo" />
+  </a>
+</p>
+
 DreamAvoid is a critical-phase test-time dreaming framework for VLA (Vision-Language-Action) manipulation. The base policy is executed directly during routine steps, and test-time dreaming is invoked only when the system predicts an imminent transition into a critical phase.
 
 The system has three modules: a **Dream Trigger** that decides when to intervene, an **Action Proposer** that samples multiple candidate action chunks, and a **Dream Evaluator** that scores candidates by forward-simulating their short-horizon futures with an action-conditioned world model and a value model.
-
-<video src="https://drive.google.com/uc?export=download&id=1YI2vJYQpwIoHb0ship5vkSFgl7bgAfIc" controls="controls" width="100%">
-</video>
 
 <p align="center">
   <img src="teaser.png" alt="DreamAvoid teaser" width="100%"/>
